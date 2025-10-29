@@ -1,0 +1,71 @@
+:root {
+  --Blue500: hsl(223, 87%, 63%);
+  --Blue200: hsl(223, 100%, 88%);
+  --Red400: hsl(354, 100%, 66%);
+  --Gray400: hsl(0, 0%, 59%);
+  --Blue950: hsl(209, 33%, 12%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Libre Franklin', sans-serif;
+}
+
+main {
+  padding: 2rem;
+  font-family: 'Poppins', sans-serif;
+  background-color: hsl(0, 0%, 98%);
+  min-height: 100vh;
+  text-align: center;
+}
+
+.logo {
+  width: 4em;
+}
+
+.launching {
+  color: var(--Gray400);
+  font-size: 1.4rem;
+}
+
+.soon {
+  color: black;
+  font-weight: 700;
+}
+
+.subscribe {
+  font-size: 0.8rem;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background-color: var(--Blue500);
+  color: white;
+}
+
+.dashboard-illustration {
+  max-width: 100%;
+  height: auto;
+}
+
+.social-icons {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  color: var(--Blue500);
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 0.875rem;
+  color: hsl(233, 8%, 62%);
+  margin-top: 2rem;
+}
