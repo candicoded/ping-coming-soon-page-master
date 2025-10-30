@@ -11,7 +11,7 @@ function App() {
 
         <p className="subscribe">Subscribe and get notified</p>
 
-        <input type="email" placeholder="Your email address" />
+        <input type="email" placeholder="Your email address..." />
         <button type="submit">Notify Me</button>
 
         <img
