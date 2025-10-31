@@ -52,6 +52,19 @@ input::placeholder {
   color: var(--Blue200);
 }
 
+.error {
+  border: 2px solid var(--Red400);
+}
+
+.error-message {
+  color: var(--Red400);
+  font-size: 0.75rem;
+  margin-bottom: 1em;
+  text-align: center;
+  font-style: italic;
+  font-weight: 500;
+}
+
 button {
   cursor: pointer;
   border-radius: 25px;
