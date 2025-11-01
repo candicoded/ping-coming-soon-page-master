@@ -10,12 +10,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Libre Franklin', sans-serif;
+  font-family: "Libre Franklin", sans-serif;
 }
 
 main {
   padding: 2rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   text-align: center;
 }
 
@@ -38,6 +38,7 @@ main {
 .subscribe {
   font-size: 0.8rem;
   margin-bottom: 2em;
+  color: var(--Gray400);
 }
 
 input {
@@ -100,4 +101,44 @@ footer {
   text-align: center;
   font-size: 0.75rem;
   color: hsl(233, 8%, 62%);
+}
+
+@media screen and (min-width: 1040px) {
+  main {
+    max-width: 50em;
+    margin: 0 auto;
+  }
+
+  .logo {
+    width: 5.6em;
+    margin: 3em 0;
+  }
+
+  .launching {
+    font-size: 3rem;
+  }
+
+  .subscribe {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  input {
+    width: 70%;
+    padding: 1.3em;
+    margin-right: 1em;
+  }
+
+  button {
+    width: 25%;
+    padding: 1.3em;
+  }
+
+  .fa-brands:hover {
+    background-color: var(--Blue500);
+    border-radius: 50%;
+    cursor: pointer;
+    color: white;
+    padding: 0.5em;
+  }
 }

@@ -1,44 +1,56 @@
+import { useState } from "react";
 import "./App.css";
 
 function App() {
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
+
   const validateForm = (e) => {
     e.preventDefault();
-    const emailInput = document.querySelector('input[type="email"]');
-    const emailValue = emailInput.value;
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    if (!emailPattern.test(emailValue)) {
-      emailInput.classList.add("error");
-      if (!document.querySelector(".error-message")) {
-        const errorMessage = document.createElement("p");
-        errorMessage.className = "error-message";
-        errorMessage.textContent = "Please provide a valid email address";
-        emailInput.parentNode.insertBefore(errorMessage, emailInput.nextSibling);
-      }
+    if (!emailPattern.test(email)) {
+      setError("Please provide a valid email address");
     } else {
-      emailInput.classList.remove("error");
-      const existingErrorMessage = document.querySelector(".error-message");
-      if (existingErrorMessage) {
-        existingErrorMessage.remove();
-      }
-      // Here you can add further actions for a valid email, like sending it to a server
+      setError("");
       alert("Thank you for subscribing!");
-      emailInput.value = ""; // Clear the input field
+      setEmail(""); // clear input
     }
-  }
+  };
 
   return (
     <>
       <main>
-        <img src="./src/assets/images/logo.svg" alt="Ping logo" className="logo" />
+        <img
+          src="./src/assets/images/logo.svg"
+          alt="Ping logo"
+          className="logo"
+        />
 
-        <p className="launching">We are launching <span className="soon">soon!</span>
+        <p className="launching">
+          We are launching <span className="soon">soon!</span>
         </p>
 
         <p className="subscribe">Subscribe and get notified</p>
 
-        <input type="email" placeholder="Your email address..." />
-        <button type="submit" onClick={validateForm}>Notify Me</button>
+        <form onSubmit={validateForm} noValidate>
+          <input
+            id="email"
+            type="email"
+            placeholder="Your email address..."
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className={error ? "error" : ""}
+            aria-invalid={!!error}
+            aria-describedby={error ? "email-error" : undefined}
+          />
+          {error && (
+            <p id="email-error" className="error-message" aria-live="polite">
+              {error}
+            </p>
+          )}
+          <button type="submit">Notify Me</button>
+        </form>
 
         <img
           src="./src/assets/images/illustration-dashboard.png"
@@ -52,10 +64,15 @@ function App() {
           <i className="fa-brands fa-instagram"></i>
         </div>
       </main>
+
       <footer>
         <p>&copy; Copyright Ping. All rights reserved.</p>
-        Challenge by
-        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
+        Challenge by{" "}
+        <a
+          href="https://www.frontendmentor.io?ref=challenge"
+          target="_blank"
+          rel="noreferrer"
+        >
           Frontend Mentor
         </a>
         . Coded by <a href="#">Candice</a>.
